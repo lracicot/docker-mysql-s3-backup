@@ -1,0 +1,7 @@
+#!/bin/sh
+echo "Backup schedule: $SCHEDULE"
+echo "Backup location: s3://$AWS_BUCKET_NAME/$AWS_OBJECT_PATH"
+echo "$SCHEDULE /bin/backup-script" > /etc/crontabs/root
+
+# Launch cmd
+exec "$@"

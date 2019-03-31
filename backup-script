@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "Running backup job.".
+mysqldump --host=$MYSQL_HOST -u$MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE | s3cmd put - s3://$AWS_BUCKET_NAME/$AWS_OBJECT_PATH  --access_key=$AWS_ACCESS_KEY_ID --secret_key=$AWS_SECRET_ACCESS_KEY

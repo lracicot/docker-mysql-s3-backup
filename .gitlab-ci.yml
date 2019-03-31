@@ -1,0 +1,13 @@
+variables:
+  CI_REGISTRY_IMAGE: registry.phpcreation.com/mysql-s3-backup
+
+stages:
+  - build
+
+build:
+  only:
+    - master
+  stage: build
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE:latest .
+    - docker push $CI_REGISTRY_IMAGE:latest
