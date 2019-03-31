@@ -1,6 +1,9 @@
 variables:
   CI_REGISTRY_IMAGE: registry.phpcreation.com/mysql-s3-backup
 
+services:
+  - docker:dind
+
 stages:
   - build
 
