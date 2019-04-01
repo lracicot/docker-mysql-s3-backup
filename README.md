@@ -4,17 +4,18 @@ Runs `mysqldump` and pipes the output to AWS S3 using `s3cmd`.
 
 ## Configuration
 
-| Environement          | default      |
-|-----------------------|--------------|
-| SCHEDULE              | `* * * * *`  |
-| MYSQL_HOST            | `127.0.0.1`  |
-| MYSQL_USER            | `root`       |
-| MYSQL_PASSWORD        | *required*   |
-| MYSQL_DATABASE        | *required*   |
-| AWS_ACCESS_KEY_ID     | *required*   |
-| AWS_SECRET_ACCESS_KEY | *required*   |
-| AWS_BUCKET_NAME       | *required*   |
-| AWS_OBJECT_PATH       | `backup.sql` |
+| Environement          | default         |
+|-----------------------|-----------------|
+| SCHEDULE              | `* * * * *`     |
+| TZ                    | America/Toronto |
+| MYSQL_HOST            | `127.0.0.1`     |
+| MYSQL_USER            | `root`          |
+| MYSQL_PASSWORD        | *required*      |
+| MYSQL_DATABASE        | *required*      |
+| AWS_ACCESS_KEY_ID     | *required*      |
+| AWS_SECRET_ACCESS_KEY | *required*      |
+| AWS_BUCKET_NAME       | *required*      |
+| AWS_OBJECT_PATH       | `backup.sql`    |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk add --no-cache --update mysql-client py-pip && pip install s3cmd
+RUN apk add --no-cache --update mysql-client py-pip tzdata && pip install s3cmd
 
 COPY backup-script /bin/backup-script
 COPY entrypoint /bin/entrypoint
@@ -11,6 +11,8 @@ ENV SCHEDULE "* * * * *"
 ENV MYSQL_HOST 127.0.0.1
 ENV MYSQL_USER root
 ENV AWS_OBJECT_PATH "backup.sql"
+
+ENV TZ America/Toronto
 
 CMD ["/usr/sbin/crond", "-f"]
 ENTRYPOINT ["/bin/entrypoint"]
