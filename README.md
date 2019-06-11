@@ -19,6 +19,13 @@ Runs `mysqldump` and pipes the output to AWS S3 using `s3cmd`.
 
 ## Examples
 
+Run the script manually:
+
+```
+docker exec CONTAINER_ID /bin/backup-script
+```
+
+
 Using `docker-compose`:
 
 ```
